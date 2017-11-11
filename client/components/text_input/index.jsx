@@ -13,8 +13,6 @@ export default class TextInput extends Component {
   }
 
   handleInput(e) {
-    console.log("****");
-    console.log("handled change");
     this.setState({
       text: e.target.value,
     });
@@ -32,6 +30,7 @@ export default class TextInput extends Component {
           value={this.state.text}
           onChange={this.handleInput}
         />
+        <button />
       </div>
     );
   }

@@ -4,9 +4,10 @@ import { shallow, render } from "enzyme";
 import TextInput from "./index";
 
 describe("<TextInput />", () => {
-  it("renders one text input", () => {
-    const wrapper = shallow(<TextInput placeholder="placeholder!" />);
+  it("renders an input and a button", () => {
+    const wrapper = shallow(<TextInput />);
     expect(wrapper.find("input").length).toEqual(1);
+    expect(wrapper.find("button").length).toEqual(1);
   });
 
   it("has placeholder text", () => {
