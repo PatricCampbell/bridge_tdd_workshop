@@ -7,14 +7,22 @@ export default class TextInput extends Component {
 
     this.state = {
       text: "",
+      paragraphText: "",
     };
 
     this.handleInput = this.handleInput.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleInput(e) {
     this.setState({
       text: e.target.value,
+    });
+  }
+
+  handleClick(e) {
+    this.setState({
+      paragraphText: this.state.text,
     });
   }
 
@@ -30,7 +38,8 @@ export default class TextInput extends Component {
           value={this.state.text}
           onChange={this.handleInput}
         />
-        <button />
+        <button onClick={this.handleClick}>Click me!</button>
+        <p>{this.state.paragraphText}</p>
       </div>
     );
   }

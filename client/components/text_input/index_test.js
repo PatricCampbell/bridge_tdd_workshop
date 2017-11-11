@@ -30,4 +30,13 @@ describe("<TextInput />", () => {
     });
     expect(wrapper.find("input").hasClass("red")).toEqual(false);
   });
+
+  it("adds a p tag with the value of the text input", () => {
+    const wrapper = shallow(<TextInput placeholder="placeholder!" />);
+    wrapper.setState({
+      text: "wooooooooo",
+    });
+    wrapper.find("button").simulate("click");
+    expect(wrapper.find("p").text()).toEqual("wooooooooo");
+  });
 });
