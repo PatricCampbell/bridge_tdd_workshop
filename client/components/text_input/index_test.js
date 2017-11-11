@@ -33,6 +33,13 @@ describe("<TextInput />", () => {
     expect(wrapper.find("input").hasClass("red")).toEqual(false);
   });
 
+  it("renders without red class with exactly 10 chars", () => {
+    wrapper.setState({
+      text: "0123456789",
+    });
+    expect(wrapper.find("input").hasClass("red")).toEqual(false);
+  });
+
   it("adds a p tag with the value of the text input", () => {
     wrapper.setState({
       text: "wooooooooo",
